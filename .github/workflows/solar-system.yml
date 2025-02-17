@@ -6,6 +6,11 @@ on:
     branches:
       - main
       - 'feature/*'
+
+env:
+  MONGO_URI: 'mongodb://localhost:27017'
+  
+
     
 jobs:
     unit-testing:
