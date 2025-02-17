@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const mongoose = require("mongoose");
 const app = express();
 const cors = require('cors')
+const mongoURI = "mongodb://localhost:27017/myDatabase";
 
 
 app.use(bodyParser.json());
@@ -24,7 +25,7 @@ app.use(cors())
 //     }
 // })
 
-mongoose.connect("mongodb://localhost:27017/", {
+mongoose.connect(mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }, function(err) {
