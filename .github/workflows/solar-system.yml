@@ -7,8 +7,8 @@ on:
       - main
       - 'feature/*'
 
-# env:
-#   MONGO_URI: 'mongodb://localhost:27017/'
+env:
+  MONGO_URI: 'mongodb://localhost:27017/'
   
 
     
@@ -16,6 +16,12 @@ jobs:
     unit-testing:
         name: Unit Testing
         runs-on: ubuntu-latest
+        services:
+          mongo:
+            image: mongo:latest
+            ports:
+              - 27017:27017
+            options: --health-cmd="exit 1" --health-interval=10s --health-timeout=5s --health-retries=3
         steps:
         - name: Checkout Repository
           uses: actions/checkout@v4
