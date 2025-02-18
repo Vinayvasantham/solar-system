@@ -24,12 +24,25 @@ app.use(cors())
 //     }
 // })
 
-mongoose.connect("mongodb://localhost:27017/", {
+// mongoose.connect("mongodb://localhost:27017/", {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// }, function(err) {
+//     if (err) {
+//         console.log("Error!! " + err);
+//     } else {
+//         console.log("MongoDB Connection Successful");
+//     }
+// });
+
+mongoose.connect("mongodb://admin:password@localhost:27017/admin", {
+    user: "admin",
+    pass: "password",
     useNewUrlParser: true,
     useUnifiedTopology: true
 }, function(err) {
     if (err) {
-        console.log("Error!! " + err);
+        console.log("error!! " + err);
     } else {
         console.log("MongoDB Connection Successful");
     }
