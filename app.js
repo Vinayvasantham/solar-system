@@ -35,9 +35,9 @@ app.use(cors())
 //     }
 // });
 
-mongoose.connect("mongodb://admin:password@127.0.0.1:27017/admin", {
-    user: "admin",
-    pass: "password",
+mongoose.connect("mongodb://127.0.0.1:27017/admin", {
+    // user: "admin",
+    // pass: "password",
     useNewUrlParser: true,
     useUnifiedTopology: true
 }, function(err) {
