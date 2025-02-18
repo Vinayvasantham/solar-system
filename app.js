@@ -35,7 +35,7 @@ app.use(cors())
 //     }
 // });
 
-mongoose.connect("mongodb://localhost:27017/admin", {
+mongoose.connect("mongodb://0.0.0.0:27017/admin", {
     // user: "admin",
     // pass: "password",
     useNewUrlParser: true,
